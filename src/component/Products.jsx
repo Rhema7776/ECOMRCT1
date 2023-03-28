@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Skeleton from 'react-loading-skeleton';
+import { NavLink } from 'react-router-dom';
 
 const Products = () => {
     const [data, setData] = useState([]); 
@@ -29,10 +30,7 @@ const Products = () => {
     const Loading = () => {
         return(
             <>
-                Loading....
-                {/* <div className="col-md-3">
-                    <Skeleton height={350}/>
-                </div>
+                {/* Loading.... */}
                 <div className="col-md-3">
                     <Skeleton height={350}/>
                 </div>
@@ -41,7 +39,10 @@ const Products = () => {
                 </div>
                 <div className="col-md-3">
                     <Skeleton height={350}/>
-                </div> */}
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350}/>
+                </div>
             </>
         );
     };
@@ -74,9 +75,9 @@ const Products = () => {
                                         <p class="card-text lead fw-bold">
                                             ${product.price}
                                         </p>
-                                        <a href='#' class="btn btn-outline-dark">
-                                            Buy Now
-                                        </a>
+                                        <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark">
+                                            Buy Now 
+                                        </NavLink>
                                     </div>
                                 </div> 
                             </div>
